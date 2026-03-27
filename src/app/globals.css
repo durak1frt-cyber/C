@@ -1,0 +1,390 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─────────────────────────────────────────
+     BIODUSTRY DESIGN SYSTEM — TOKEN LAYER
+  ───────────────────────────────────────── */
+
+  /* Color Palette */
+  --color-slate-950:  #020617;
+  --color-slate-900:  #0f172a;
+  --color-slate-800:  #1e293b;
+  --color-slate-700:  #334155;
+  --color-slate-600:  #475569;
+  --color-slate-500:  #64748b;
+  --color-slate-400:  #94a3b8;
+  --color-slate-300:  #cbd5e1;
+  --color-slate-200:  #e2e8f0;
+  --color-slate-100:  #f1f5f9;
+  --color-slate-50:   #f8fafc;
+
+  /* Accent — Gold-Honey */
+  --color-accent:     #C5A059;
+  --color-accent-dim: #a8874a;
+  --color-accent-glow: rgba(197, 160, 89, 0.15);
+  --color-accent-border: rgba(197, 160, 89, 0.3);
+
+  /* Fonts */
+  --font-sans:  var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:  var(--font-jetbrains), ui-monospace, 'Courier New', monospace;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Easing */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Spacing scale */
+  --spacing-section: 7rem;
+
+  /* Shadows */
+  --shadow-glow-accent: 0 0 40px rgba(197, 160, 89, 0.2);
+  --shadow-card: 0 4px 32px rgba(0,0,0,0.4);
+}
+
+/* ─────────────────────────────────────────
+   GLOBAL BASE STYLES
+───────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #020617;
+  color: #cbd5e1;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ─────────────────────────────────────────
+   NOISE OVERLAY — 0.02 opacity grain
+───────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY UTILITIES
+───────────────────────────────────────── */
+.font-mono-data {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   GRADIENT MESH BACKGROUND
+───────────────────────────────────────── */
+.mesh-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(197,160,89,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(197,160,89,0.04) 0%, transparent 50%),
+    #020617;
+}
+
+/* ─────────────────────────────────────────
+   GLASSMORPHISM CARD
+───────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-accent {
+  background: rgba(197, 160, 89, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+/* ─────────────────────────────────────────
+   PILLAR CARDS — hover glow
+───────────────────────────────────────── */
+.pillar-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  transition: border-color 0.4s var(--ease-expo), box-shadow 0.4s var(--ease-expo), transform 0.4s var(--ease-expo);
+}
+
+.pillar-card:hover {
+  border-color: rgba(197, 160, 89, 0.4);
+  box-shadow: 0 0 32px rgba(197, 160, 89, 0.1), 0 8px 32px rgba(0,0,0,0.5);
+  transform: translateY(-4px);
+}
+
+/* ─────────────────────────────────────────
+   CTA BUTTON — Magnetic feel
+───────────────────────────────────────── */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #C5A059 0%, #a8874a 100%);
+  color: #020617;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-expo), box-shadow 0.3s var(--ease-expo);
+}
+
+.btn-accent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-accent:hover::before { opacity: 1; }
+.btn-accent:hover {
+  box-shadow: 0 0 40px rgba(197,160,89,0.4), 0 8px 24px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+.btn-accent:active { transform: translateY(0); }
+
+/* ─────────────────────────────────────────
+   OUTLINE BUTTON
+───────────────────────────────────────── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: #C5A059;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(197,160,89,0.3);
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.btn-outline:hover {
+  border-color: #C5A059;
+  background: rgba(197,160,89,0.06);
+  box-shadow: 0 0 24px rgba(197,160,89,0.15);
+}
+
+/* ─────────────────────────────────────────
+   SECTION FADE-IN ANIMATION
+───────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s var(--ease-expo) both;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* ─────────────────────────────────────────
+   HEXAGONAL GRID
+───────────────────────────────────────── */
+.hex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.hex-cell {
+  width: 80px;
+  height: 88px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+  cursor: default;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.hex-cell.active {
+  background: rgba(197,160,89,0.1);
+}
+
+/* ─────────────────────────────────────────
+   MOLECULAR SHUFFLER
+───────────────────────────────────────── */
+@keyframes springBounce {
+  0%   { transform: scale(1) rotate(0deg); }
+  30%  { transform: scale(1.04) rotate(-1deg); }
+  60%  { transform: scale(0.97) rotate(0.5deg); }
+  80%  { transform: scale(1.01) rotate(-0.2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.shuffler-bounce {
+  animation: springBounce 0.6s var(--ease-spring) both;
+}
+
+/* ─────────────────────────────────────────
+   SOIL PULSE (EKG Waveform)
+───────────────────────────────────────── */
+@keyframes ekg-draw {
+  from { stroke-dashoffset: 1500; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes ekg-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.ekg-path {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: ekg-draw 3s linear infinite;
+}
+
+/* ─────────────────────────────────────────
+   PROTOCOL STACK — Sticky scroll
+───────────────────────────────────────── */
+.protocol-card {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s var(--ease-expo), opacity 0.6s var(--ease-expo), filter 0.6s var(--ease-expo);
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR STYLING
+───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197,160,89,0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197,160,89,0.6);
+}
+
+/* ─────────────────────────────────────────
+   SELECTION COLOR
+───────────────────────────────────────── */
+::selection {
+  background: rgba(197,160,89,0.25);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────
+   DIVIDER
+───────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197,160,89,0.2), transparent);
+}
+
+/* ─────────────────────────────────────────
+   PARTICLE CANVAS (Hero)
+───────────────────────────────────────── */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────
+   NAV ACTIVE INDICATOR
+───────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #C5A059;
+  transform: scaleX(0);
+  transition: transform 0.3s var(--ease-expo);
+  transform-origin: left;
+}
+.nav-link:hover {
+  color: #C5A059;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ─────────────────────────────────────────
+   COUNTER ANIMATION
+───────────────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE UTILITIES
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .protocol-card {
+    position: relative;
+    height: auto;
+    min-height: 85vh;
+  }
+}

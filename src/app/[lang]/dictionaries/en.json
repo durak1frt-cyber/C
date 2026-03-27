@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "BIODUSTRY | Engineering the Future of Molecular Industry",
+    "description": "Discover how BIODUSTRY transforms industrial manufacturing and agriculture through high-scale biotechnology."
+  },
+  "nav": {
+    "logo": "BIODUSTRY",
+    "tagline": "Molecular Technologies",
+    "links": [
+      { "label": "Technologies", "href": "#pillars" },
+      { "label": "Artifacts", "href": "#artifacts" },
+      { "label": "Protocol", "href": "#protocol" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": "Get Access"
+  },
+  "hero": {
+    "eyebrow": "Molecular Technologies Platform",
+    "h1": "Engineering the Future of Molecular Industry",
+    "sub": "We don't just study biology; we architect it. BIODUSTRY bridges the gap between lab-scale discovery and industrial-grade application.",
+    "cta_primary": "Explore Our Technologies",
+    "cta_secondary": "View Protocol",
+    "scroll_hint": "Scroll to discover",
+    "stats": [
+      { "value": "480+", "label": "Active Deployments" },
+      { "value": "99.7%", "label": "Process Efficacy" },
+      { "value": "3.2B", "label": "Annual Data Points" }
+    ]
+  },
+  "hook": {
+    "eyebrow": "Industrial Evolution",
+    "legacy_label": "Legacy Manufacturing",
+    "legacy_items": ["Petrochemical-bound", "Resource-depleting", "Static yield curves"],
+    "modern_label": "Biology-Driven Efficiency",
+    "manifesto": "Your industry is evolving. Is your chemistry keeping up?",
+    "manifesto_sub": "The molecular transition is not a future event. It is the present competitive advantage — and it starts at the enzymatic level."
+  },
+  "pillars": {
+    "eyebrow": "The Foundation of Growth",
+    "h2": "Five Pillars of Molecular Leadership",
+    "sub": "Our platform integrates five converging disciplines into a single, industrial-grade molecular intelligence stack.",
+    "items": [
+      {
+        "id": "biotech",
+        "title": "Bio-Industrial Tech",
+        "sub": "Molecular manufacturing solutions for industrial-scale bioproduction processes.",
+        "metric": "12× yield",
+        "icon": "dna"
+      },
+      {
+        "id": "agritech",
+        "title": "Agri-Tech",
+        "sub": "Resilient crop molecular optimization — drought resistance, nutrient density, and adaptive genetics.",
+        "metric": "40% less water",
+        "icon": "wheat"
+      },
+      {
+        "id": "foodtech",
+        "title": "Food-Tech",
+        "sub": "High-efficiency molecular nutrition — precision fermentation and functional ingredient synthesis.",
+        "metric": "8× protein density",
+        "icon": "flask"
+      },
+      {
+        "id": "circular",
+        "title": "Circular Economy Tech",
+        "sub": "Waste-to-value innovation through enzymatic upcycling, biogas conversion, and bio-based polymer chains.",
+        "metric": "0 industrial waste",
+        "icon": "recycle"
+      },
+      {
+        "id": "data",
+        "title": "Global Data",
+        "sub": "Real-time molecular system insights — live telemetry from 480+ active biological process nodes.",
+        "metric": "3.2B data pts/yr",
+        "icon": "network"
+      }
+    ]
+  },
+  "artifacts": {
+    "eyebrow": "Molecular Interaction Artifacts",
+    "h2": "Technical Proof in Motion",
+    "sub": "Three live instruments demonstrating the depth of our molecular intelligence layer.",
+    "hex": {
+      "title": "Hexagonal Data Grid",
+      "desc": "Live honeycomb of biological telemetry sensors — real-time process state visualization.",
+      "labels": ["pH", "DO₂", "CO₂", "Temp", "ORP", "Turb", "ATP", "Flux", "NH₄", "NO₃", "K⁺", "PO₄"]
+    },
+    "shuffler": {
+      "title": "Molecular Shuffler",
+      "desc": "Spring-bounce card deck cycling through active compound discovery pathways.",
+      "cards": [
+        { "compound": "Lactobacillus F-9", "status": "ACTIVE", "efficacy": "98.3%", "class": "Probiotic Strain" },
+        { "compound": "EnzymePlex-7", "status": "SYNTHESIS", "efficacy": "94.1%", "class": "Enzymatic Cascade" },
+        { "compound": "AgroPeptide-X3", "status": "FIELD TEST", "efficacy": "91.7%", "class": "Crop Protectant" }
+      ]
+    },
+    "pulse": {
+      "title": "Soil Pulse",
+      "desc": "EKG-style biological activity monitor — real-time enzymatic flux from active growth matrices."
+    }
+  },
+  "protocol": {
+    "eyebrow": "Stacking Scale",
+    "h2": "The BIODUSTRY Protocol",
+    "cards": [
+      {
+        "number": "01",
+        "title": "Molecular Discovery",
+        "sub": "We isolate, sequence, and model high-value biological compounds at the microbial level — creating IP-protected molecular blueprints for industrial application.",
+        "tag": "Discovery Layer",
+        "metric": ["120+ Species Analyzed", "4.7TB Genomic Data"]
+      },
+      {
+        "number": "02",
+        "title": "Scale Engineering",
+        "sub": "We engineer proprietary fermentation and bioreactor systems that translate lab-scale molecular findings into continuous industrial output — without loss of efficacy.",
+        "tag": "Process Layer",
+        "metric": ["10,000L Capacity", "99.7% Process Efficacy"]
+      },
+      {
+        "number": "03",
+        "title": "Market Integration",
+        "sub": "We deploy molecular product streams directly into agriculture, food, and manufacturing supply chains — creating measurable efficiency, circularity, and market differentiation.",
+        "tag": "Deployment Layer",
+        "metric": ["480+ Active Deployments", "32 Industry Verticals"]
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Scaling the Precision of Life for the Industrial Age.",
+    "copyright": "© 2024 BIODUSTRY. All molecular rights reserved."
+  }
+}
